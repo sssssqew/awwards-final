@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* vh 로 설정시 모바일에서 주소창 영역을 제외하게 된다. */
+/* % 로 변경하면 주소창 영역까지 화면에 꽉 차게 보인다. */
+:root{
+    --max-width: 1440px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; /* font smooth */
+}
+html, body{
+    background-color: #000;
+    overscroll-behavior: none;
+    width: 100%;
+    height: 100%;
+}
+
+.line__container{
+    position: fixed;
+    top: 0;
+    width: 100%; height: 100%;
+    left: 50%; transform: translateX(-50%);
+    max-width: var(--max-width);
+    /* border: 1px solid red; */
+    overflow: hidden;
+}
+.separator{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.154);
+}
+.separator:nth-child(1){
+    left: 25%;
+}
+.separator:nth-child(2){
+    left: 50%;
+}
+.separator:nth-child(3){
+    left: 75%;
+}
+
+main{
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; /* 해당 요소에 스크롤 이벤트 사용가능 */
+}
+.scroll__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+section{
+    /* border: 10px solid yellow; */
+    position: relative;
+    width: 100%;
+    left: 50%; transform: translateX(-50%);
+}
+
+/* Hero */
+#hero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; width: 100%;
+    /* border: 3px solid blue; */
+}
+.hero__container{
+    /* border: 3px solid green; */
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.hero__title{
+    overflow: hidden;
+}
+.hero__title__header{
+    font-size: clamp(2rem, 20cqi, 20rem); /* 디바이스 크기에 따라 글자크기가 변함 */
+    letter-spacing: -.05em;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+/* About section */
+#about{
+    display: flex;
+    justify-content: center;
+}
+.about__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: var(--max-width);
+    /* border: 10px solid blue; */
+    height: 100%; /* 컨텐츠 높이만큼 */
+}
+.about__text{
+    width: 45%;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+    font-size: 1.4rem;
+    letter-spacing: -.05em;
+}
+/* Video */
+#video{
+    display: flex;
+    justify-content: center;
+    height: 200%; /* 200vh 에서 sticky 요소의 높이를 제외한 나머지는 멈춰서 애니메이션이 진행됨 */
+    /* border: 5px solid orange; */
+}
+.shim{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    /* background-color: red; */
+    z-index: 2;
+}
+.video__sticky{
+    position: sticky;
+    top: 0;
+    width: 100%; 
+    height: 50%;
+    /* border: 5px solid purple; */
+}
+.main__video{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(.5);
+    will-change: transform;
+    /* border: 3px solid yellow; */
+}
+.video_text_overlay{
+    /* border: 3px solid blue; */
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(2rem, 10cqi, 10rem);
+    overflow: hidden;
+}
+
+/* Projects */
+#projects{
+    position: relative;
+    height: 200%; /* 브라우저 높이의 두배 */
+}
+.projects__sticky{
+    position: sticky;
+    top: 0;
+    /* border: 5px solid yellow; */
+    width: 100%;
+    height: 50%; /* 브라우저 높이와 동일함 */
+}
+.slider__container{
+    position: relative;
+    width: 100%;
+    height: 100%; /* 브라우저 높이와 동일함 */
+    overflow: hidden;
+}
+.projects__slider{
+    height: 100%; /* 브라우저 높이와 동일함 */
+    display: flex;
+    width: min-content; /* 컨텐츠 크기만큼 차지 */
+    overflow: hidden;
+    will-change: transform;
+}
+.project{
+    position: relative;
+    /* border: 2px solid blue; */
+    width: 25vw;
+    height: 100%; /* 브라우저 높이와 동일함 */
+    padding: 80px 20px 60px;
+    display: flex;
+    flex-direction: column;
+}
+.image__container{
+    position: relative;
+    width: 100%; /* 브라우저 너비의 1/4 */
+    aspect-ratio: 16 / 9; /* 해당 사이즈만큼 이미지를 보여줌 */
+    overflow: hidden;
+}
+
+.project__image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(50%);
+}
+
+.start{
+    justify-content: flex-start;
+}
+.mid{
+    justify-content: center;
+}
+.end{
+    justify-content: flex-end;
+}
+
+.project__details{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 1rem;
+}
+.project__details p{
+    font-size: .8rem;
+}
+
+/* Blog */
+#blog{
+    height: 400%; /* 브라우저 높이의 4배. 글자와 사진 3장이 각각 100%씩 차지 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog__hero,
+.blog__post{
+    width: 100%;
+    height: 25%; /* 400%의 1/4 이므로 100%. 브라우저 높이 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    max-width: var(--max-width);
+    overflow: hidden;
+}
+.text__reveal{
+    /* line-height: 1; */
+    overflow: hidden;
+    font-size: clamp(2rem, 20cqi, 20rem);
+}
+.text__reveal span{
+    display: inline-block;
+    transform: translateY(100%);
+    transition: .5s;
+    mix-blend-mode: difference;
+}
+.post{
+    position: relative;
+    width: 50%;
+    padding: 1rem;
+    /* border: 3px solid yellow; */
+    background-color: rgba(255, 255, 255, 0.067);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* 모바일에서 동작하도록 하기 위하여 */
+    will-change: transform;
+}
+.post__image__container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+.blog__post__img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.post__details{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.post__details p{
+    font-size: .8rem;
+}
+
+/* Circle */
+#circle__section{
+    position: relative;
+    height: 200%; /* 브라우저 높이의 2배 */
+}
+.circle__sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50%; /* 브라우저 높이와 동일 */
+    /* border: 3px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle__container{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%; /* 브라우저 높이와 동일 */
+    overflow: hidden;
+    /* border: 5px solid blue; */
+}
+/* 브라우저 화면 중앙에서 큰 길이의 150%만큼 원을 그림 */
+.circle{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 150vmax; /* vmax : 디바이스 높이나 너비 중에서 더 큰 값을 취함 */
+    height: 150vmax;
+    /* border: 3px solid yellowgreen; */
+    background-color: white;
+    border-radius: 50%;
+}
+.circle__sticky h2{
+    font-size: clamp(2rem, 20cqi, 20rem);
+    color: #000;
+    z-index: 1;
+}
+
+/* Discover */
+#discover{
+    background-color: white;
+    height: 100%;
+}
+.discover__container{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 3px solid yellow; */
+    overflow: hidden;
+}
+.discover__container p{
+    color: black;
+    font-size: 1.4rem;
+    will-change: transform;
+}
+
+/* End Video */
+#end__video{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.end__video__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.end__video{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+#footer{
+    height: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.footer__container{
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1100px){
+    p{
+        font-size: .8rem;
+    }
+    #projects{
+        height: 400%; /* 브라우저 높이의 4배. 디바이스 크기를 줄이면 컨텐츠는 아래로 더 길게 내려오므로 스크롤 할수 있는 길이를 두배로 늘림 */
+    }
+    .projects__sticky{
+        height: 25%; /* 브라우저 높이와 동일 */
+    }
+    .project{
+        width: 50vw; /* 브라우저 화면에 슬라이드 2장만 보이도록 줄임 */
+    }
+}
+
+@media screen and (max-width: 600px){
+    #projects{
+        height: 800%; /* 브라우저 높이의 4배. 디바이스 크기를 줄이면 컨텐츠는 아래로 더 길게 내려오므로 스크롤 할수 있는 길이를 두배로 늘림 */
+    }
+    .projects__sticky{
+        height: 12.5%; /* 브라우저 높이와 동일 */
+    }
+    .project{
+        width: 100vw; /* 브라우저 화면에 슬라이드 1장만 보이도록 줄임 */
+    }
+    .post{
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+

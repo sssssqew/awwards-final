@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="line__container">
+        <div class="separator"></div>
+        <div class="separator"></div>
+        <div class="separator"></div>
+    </div>
+
+    <main>
+        <div class="scroll__container">
+            <section id="hero">
+                <div class="hero__container">
+                    <div class="hero__title">
+                        <h1 class="hero__title__header text__reveal">CONOR</h1>
+                    </div>
+                    <div class="hero__cta">
+                        <h4>STUDIO</h4>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="about">
+                <div class="about__container">
+                    <div class="about__text">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam dolorum autem aut labore ratione sequi molestiae provident? Natus tempora, consequatur perferendis, soluta ex iste blanditiis, dignissimos amet ab totam cumque.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam dolorum autem aut labore ratione sequi molestiae provident? Natus tempora, consequatur perferendis, soluta ex iste blanditiis, dignissimos amet ab totam cumque.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam dolorum autem aut labore ratione sequi molestiae provident? Natus tempora, consequatur perferendis, soluta ex iste blanditiis, dignissimos amet ab totam cumque.
+                        </p>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="video">
+                <!-- 모바일에서 video 요소 위에 오버레이해서 video 에 직접 터치이벤트가 동작하지 않도록 함 -->
+                 <!-- 모바일에서는 video 요소에 직접 터치 이벤트가 먹히지 않기 때문임 -->
+                <div class="shim"></div>
+                <div class="video__sticky">
+                    <video class="main__video" autoplay muted loop playsinline src="https://framerusercontent.com/modules/assets/BcIElVBzSD9P1ht5PhehnVyzTA~0iRDOKjSaNyoXJfsXAcSsdeEYSbJ8aAp3MvS5ts7LL0.mp4"></video>
+                    <div class="video_text_overlay">
+                        <h2 class="text__header__left">SHOW</h2>
+                        <h2 class="text__header__right">CASE</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="projects__sticky">
+                    <div class="slider__container">
+                        <div class="projects__slider">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="blog">
+                <div class="blog__hero">
+                    <h2 class="text__reveal">BLOG</h2>
+                </div>
+            </section>
+
+            <section id="circle__section">
+                <div class="circle__sticky">
+                    <h2>TBI</h2>
+                    <div class="circle__container">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="discover">
+                <div class="discover__container">
+                    <p class="text__left">THIS SITE WAS DESIGNED BY FAVORIT X FRAME</p>
+                    <p class="text__right">EXCLUSIVE FOR THE BRAND IDENTITY.</p>
+                </div>
+            </section>
+
+            <section id="end__video">
+                <div class="shim"></div>
+                <div class="end__video__container">
+                    <video class="end__video" autoplay muted loop playsinline src="https://framerusercontent.com/assets/sagu9WJMRc7UvZaZc4N2cUQ68Z4.mp4"></video>
+                </div>
+            </section>
+
+            <section id="footer">
+                <div class="footer__container">
+                    <div class="footer__title">
+                        <h2 class="text__reveal">CONOR</h2>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
